@@ -1,13 +1,13 @@
 package com.serega.practice.module02.task023;
 
 
-public class HomeWork023 {
+public class Withdraw {
     public static void main(String[] args) {
 
         int[] balances = {1200, 250, 2000, 500, 3200};
         String[] ownerNames = {"Jane", "Ann", "Jack", "Oww", "Lane"};
 
-        HomeWork023 obj = new HomeWork023();
+        Withdraw obj = new Withdraw();
         obj.moneyOperation(ownerNames, balances, "Jane", 1000);
 
     }

@@ -1,13 +1,13 @@
 package com.serega.practice.module02.task024;
 
 
-public class HomeWork024 {
+public class Funding {
     public static void main(String[] args) {
 
         int[] balances = {1200, 250, 2000, 500, 3200};
         String[] ownerNames = {"Jane", "Ann", "Jack", "Oww", "Lane"};
 
-        HomeWork024 obj = new HomeWork024();
+        Funding obj = new Funding();
         obj.fundingBalance(ownerNames, balances, "Ann", 3000);
 
     }
