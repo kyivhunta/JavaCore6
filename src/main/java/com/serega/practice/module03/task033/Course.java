@@ -17,6 +17,7 @@ public class Course {
     public Course(int hoursDuration, String name, String teacherName) {
         this.hoursDuration = hoursDuration;
         this.teacherName = teacherName;
+        this.name = name;
     }
 
     public Date getStartDate() {

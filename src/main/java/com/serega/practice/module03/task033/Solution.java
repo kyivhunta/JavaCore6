@@ -12,16 +12,16 @@ public class Solution {
         Course obj04 = new Course(150, "Asemler", "Зузин");
         Course obj05 = new Course(new Date(), "C#");
 
-        Student obj11 = new Student("Вася", "Кукушкин", 1);
-        Student obj12 = new Student("Кукушкин", new Course[]{obj01, obj02, obj03, obj04, obj05});
+        Student obj06 = new Student("Вася", "Кукушкин", 1);
+        Student obj07 = new Student("Кукушкин", new Course[]{obj01, obj02, obj03, obj04, obj05});
 
-        CollegeStudent obj21 = new CollegeStudent("Шваркин", "Эдуард", 2);
-        CollegeStudent obj22 = new CollegeStudent("Уткин", new Course[]{obj01, obj02, obj03, obj04, obj05});
-        CollegeStudent obj23 = new CollegeStudent("Гуляев","Ваня",new Course[]{obj01, obj02, obj03, obj04, obj05},"КПИ",9,7746345,20,5);
+        CollegeStudent obj08 = new CollegeStudent("НАУ",9,1236);
+        CollegeStudent obj09 = new CollegeStudent("КНЕУ",8,1643);
+        CollegeStudent obj10 = new CollegeStudent("КПИ",10,5671);
 
-        SpecialStudent obj31 = new SpecialStudent("Шураев",new Course[]{obj01, obj02, obj03, obj04, obj05});
-        SpecialStudent obj32 = new SpecialStudent("Витя", "Криворучко", 3);
-        SpecialStudent obj33 = new SpecialStudent("Гуляев","Ваня",new Course[]{obj01, obj02, obj03, obj04, obj05},"КПИ",9,7464369,20,5,79999);
+        SpecialStudent obj11 = new SpecialStudent(874876141,"Keepout@gmail.com");
+        SpecialStudent obj12 = new SpecialStudent(412687648,"Dangerous@gmail.com");
+        SpecialStudent obj13 = new SpecialStudent(546546446,"Area51@gmail.com");
 
 
     }

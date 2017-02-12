@@ -1,6 +1,5 @@
 package com.serega.practice.module03.task034;
 
-import org.omg.CORBA.Object;
 
 public class WorkingUser {
     public static void main(String[] args) {
