@@ -23,6 +23,7 @@ public class User {
     public void paySalary() {
 
         balance += salary;
+        System.out.println("Вам начислили ЗП в размере: "+salary+", Ваш баланс составляет: "+balance);
     }
 
     public void withdraw(int summ) {
@@ -38,16 +39,19 @@ public class User {
             pers = summ * TENPERSENT;
             balance -= pers;
         }
+
+        System.out.println("Сума снятия: "+summ+", Процент от сумы снятия составит: "+(summ<1000?"5%":"10%")+", Остаток на счету: "+balance);
     }
 
-    public int companyNameLenght() {
+    public void companyNameLenght() {
 
-        return companyName.length();
+        System.out.println("Длинна имени компании: "+companyName.length()+" символов");
     }
 
     public void monthIncreaser(int addMonth) {
 
         monthsOfEmployment += addMonth;
+        System.out.println("Отработаные месяцы: "+monthsOfEmployment);
     }
 
     public String getName() {
