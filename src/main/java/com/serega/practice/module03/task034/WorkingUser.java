@@ -7,7 +7,7 @@ public class WorkingUser {
         User obj = new User("Серега", 2000, 0, "CIKLUM", 11000, "UAH");
 
         obj.paySalary();
-        obj.withdraw(900);
+        obj.withdraw(111900);
         obj.monthIncreaser(6);
         obj.companyNameLenght();
 
