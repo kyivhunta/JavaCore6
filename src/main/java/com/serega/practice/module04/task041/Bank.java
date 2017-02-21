@@ -4,6 +4,8 @@ package com.serega.practice.module04.task041;
 import com.serega.practice.module04.task042.Currency;
 
 public abstract class Bank {
+
+    public final static int ONEHUNDREDPERSENT = 100;
     private long id;
     private String bankCountry;
     private Currency currency;
@@ -30,7 +32,9 @@ public abstract class Bank {
 
     abstract public int getCommission(int summ);
 
-    abstract public double moneyPaidMonthlyForSalary();
+    public double moneyPaidMonthlyForSalary(){
+        return avrSalaryOfEmployee/ ONEHUNDREDPERSENT * getMonthlyRate();
+    }
 
     public long getId() {
         return id;

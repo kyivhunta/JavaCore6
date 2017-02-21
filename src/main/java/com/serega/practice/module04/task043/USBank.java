@@ -11,7 +11,6 @@ public class USBank extends Bank {
     public final static int EIGHTPERSENT = 8;
     public final static int ONEPERSENT = 1;
     public final static int TWOPERSENT = 2;
-    public final static int ONEHUNDREDPERSENT = 100;
 
 
     public USBank(long id, String bankCountry, Currency currency, int numberOfEmployees, double avrSalaryOfEmployee, long rating, long totalCapital) {
@@ -59,8 +58,4 @@ public class USBank extends Bank {
         return persent;
     }
 
-    public double moneyPaidMonthlyForSalary() {
-
-        return getAvrSalaryOfEmployee() / ONEHUNDREDPERSENT * getMonthlyRate();
-    }
 }

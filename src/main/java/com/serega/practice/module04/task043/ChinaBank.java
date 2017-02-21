@@ -11,7 +11,7 @@ public class ChinaBank extends Bank {
     public final static int ELEVENPERSENT = 11;
     public final static int ONEPERSENT = 1;
     public final static int ZEROPERSENT = 0;
-    public final static int ONEHUNDREDPERSENT = 100;
+
 
 
 
@@ -61,7 +61,4 @@ public class ChinaBank extends Bank {
 
     }
 
-    public double moneyPaidMonthlyForSalary() {
-        return getAvrSalaryOfEmployee() / ONEHUNDREDPERSENT * getMonthlyRate();
-    }
 }
