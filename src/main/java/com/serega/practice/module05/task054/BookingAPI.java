@@ -24,7 +24,7 @@ public class BookingAPI implements API {
         for (int i = 0; i < rooms.length; i++) {
 
             if (rooms[i].getPrice() == price && rooms[i].getPersons() == persons && rooms[i].getCityName() == city && rooms[i].getHotelName() == hotel) {
-                newarray = newroom(newarray, rooms[i]);
+                newarray = newRoomsArray(newarray, rooms[i]);
             }
         }
 
@@ -32,7 +32,7 @@ public class BookingAPI implements API {
 
     }
 
-    public Room[] newroom(Room[] rooms, Room room) {
+    public Room[] newRoomsArray(Room[] rooms, Room room) {
 
         Room[] copyroom = Arrays.copyOf(rooms, rooms.length + 1);
         copyroom[copyroom.length - 1] = room;

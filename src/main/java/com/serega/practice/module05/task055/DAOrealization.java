@@ -4,19 +4,22 @@ import com.serega.practice.module05.task05_1_2.Room;
 
 public class DAOrealization implements DAO {
 
-    public Room save(Room room) {
-        return null;
+    Room[] rooms = new Room[10];
+
+
+    public void save(Room room) {
+        System.out.println("Конмната c id:" + room.getId() + " сохранена!");
     }
 
-    public boolean delete(Room room) {
-        return false;
+    public void delete(Room room) {
+        System.out.println("Комната c id:" + room.getId() + " удалена!");
     }
 
-    public Room update(Room room) {
-        return null;
+    public void update(Room room) {
+        System.out.println("Комната с id:" + room.getId() + " udated!");
     }
 
-    public Room findById(long id) {
-        return null;
+    public void findById(long id) {
+        System.out.println("Комната с id:" + id + " найдена!");
     }
 }

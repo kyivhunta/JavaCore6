@@ -24,7 +24,7 @@ public class Controller {
 
         for (int i = 0; i < apis.length; i++) {
 
-            result = newArray(result, apis[i].findRoom(price, persons, city, hotel));
+            result = joinArray(result, apis[i].findRoom(price, persons, city, hotel));
 
         }
 
@@ -37,86 +37,45 @@ public class Controller {
         BookingAPI bookingAPI = new BookingAPI();
         GoogleAPI googleAPI = new GoogleAPI();
         TripAdvisorAPI tripAdvisorAPI = new TripAdvisorAPI();
-        Room[] resarray = new Room[0];
-        Room[] resarray2 = new Room[0];
+        Room[] resultarray1 = new Room[0];
+        Room[] resultarray2 = new Room[0];
 
         if (api1.getClass() == bookingAPI.getClass() && api2.getClass() == googleAPI.getClass() || api1.getClass() == googleAPI.getClass() && api2.getClass() == bookingAPI.getClass()) {
             for (int i = 0; i < bookingAPI.getRooms().length; i++) {
                 for (int j = 0; j < googleAPI.getRooms().length; j++) {
                     if (bookingAPI.getRooms()[i].equals(googleAPI.getRooms()[j])) {
-                        resarray = bookingAPI.newroom(resarray, bookingAPI.getRooms()[i]);
-                        break;
+                        resultarray1 = bookingAPI.newRoomsArray(resultarray1, bookingAPI.getRooms()[i]);
+                        resultarray2 = googleAPI.newRoomsArray(resultarray2, googleAPI.getRooms()[j]);
                     }
-
                 }
-
             }
-            for (int i = 0; i < googleAPI.getRooms().length; i++) {
-                for (int j = 0; j < bookingAPI.getRooms().length; j++) {
-                    if (bookingAPI.getRooms()[j].equals(googleAPI.getRooms()[i])) {
-                        resarray2 = googleAPI.newroom(resarray2, googleAPI.getRooms()[i]);
-                        break;
-                    }
-
-                }
-
-            }
-
         }
 
         if (api1.getClass() == bookingAPI.getClass() && api2.getClass() == tripAdvisorAPI.getClass() || api1.getClass() == tripAdvisorAPI.getClass() && api2.getClass() == bookingAPI.getClass()) {
             for (int i = 0; i < bookingAPI.getRooms().length; i++) {
                 for (int j = 0; j < googleAPI.getRooms().length; j++) {
                     if (bookingAPI.getRooms()[i].equals(googleAPI.getRooms()[j])) {
-                        resarray = bookingAPI.newroom(resarray, bookingAPI.getRooms()[i]);
-                        break;
+                        resultarray1 = bookingAPI.newRoomsArray(resultarray1, bookingAPI.getRooms()[i]);
+                        resultarray2 = tripAdvisorAPI.newRoomsArray(resultarray2, tripAdvisorAPI.getRooms()[j]);
                     }
-
                 }
-
             }
-            for (int i = 0; i < tripAdvisorAPI.getRooms().length; i++) {
-                for (int j = 0; j < bookingAPI.getRooms().length; j++) {
-                    if (bookingAPI.getRooms()[j].equals(googleAPI.getRooms()[i])) {
-                        resarray2 = tripAdvisorAPI.newroom(resarray2, tripAdvisorAPI.getRooms()[i]);
-                        break;
-                    }
-
-                }
-
-            }
-
         }
 
         if (api1.getClass() == googleAPI.getClass() && api2.getClass() == tripAdvisorAPI.getClass() || api1.getClass() == tripAdvisorAPI.getClass() && api2.getClass() == googleAPI.getClass()) {
             for (int i = 0; i < googleAPI.getRooms().length; i++) {
                 for (int j = 0; j < tripAdvisorAPI.getRooms().length; j++) {
                     if (googleAPI.getRooms()[i].equals(tripAdvisorAPI.getRooms()[j])) {
-                        resarray = googleAPI.newroom(resarray, googleAPI.getRooms()[i]);
-                        break;
+                        resultarray1 = googleAPI.newRoomsArray(resultarray1, googleAPI.getRooms()[i]);
+                        resultarray2 = tripAdvisorAPI.newRoomsArray(resultarray2, tripAdvisorAPI.getRooms()[j]);
                     }
-
                 }
-
             }
-            for (int i = 0; i < tripAdvisorAPI.getRooms().length; i++) {
-                for (int j = 0; j < googleAPI.getRooms().length; j++) {
-                    if (googleAPI.getRooms()[j].equals(tripAdvisorAPI.getRooms()[i])) {
-                        resarray2 = tripAdvisorAPI.newroom(resarray2, tripAdvisorAPI.getRooms()[i]);
-                        break;
-                    }
-
-                }
-
-            }
-
         }
-
-        return newArray(resarray, resarray2);
-
+        return joinArray(resultarray1, resultarray2);
     }
 
-    public Room[] newArray(Room[] srcarray, Room[] addarray) {
+    public Room[] joinArray(Room[] srcarray, Room[] addarray) {
 
         Room[] arr = new Room[srcarray.length + addarray.length];
         System.arraycopy(srcarray, 0, arr, 0, srcarray.length);
