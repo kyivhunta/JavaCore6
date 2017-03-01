@@ -19,8 +19,8 @@ public class Main {
         System.out.println(Arrays.toString(controller.requstRooms(7500, 2, "Киев", "Dnipro")));
         System.out.println(Arrays.toString(controller.requstRooms(8000, 2, "Киев", "PremierPalatz")));
 
-        System.out.println(Arrays.toString(controller.check(new TripAdvisorAPI(), new GoogleAPI())));
         System.out.println(Arrays.toString(controller.check(new GoogleAPI(), new TripAdvisorAPI())));
+        System.out.println(Arrays.toString(controller.check(new BookingAPI(), new GoogleAPI())));
 
         DAOrealization daoRealization = new DAOrealization();
         daoRealization.findById(111);

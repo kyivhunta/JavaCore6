@@ -1,5 +1,6 @@
 package com.serega.practice.module05.task05_1_2;
 
+import java.util.Arrays;
 import java.util.Date;
 
 public class Room {
@@ -48,6 +49,14 @@ public class Room {
         this.dateAvailableFrom = dateAvailableFrom;
         this.hotelName = hotelName;
         this.cityName = cityName;
+    }
+
+    public static Room[] newRoomsArray(Room[] rooms, Room room) {
+
+        Room[] copyroom = Arrays.copyOf(rooms, rooms.length + 1);
+        copyroom[copyroom.length - 1] = room;
+        return copyroom;
+
     }
 
 

@@ -6,4 +6,6 @@ public interface API {
 
     Room[] findRoom(int price, int persons, String city, String hotel);
 
+    Room[] getRooms();
+
 }
