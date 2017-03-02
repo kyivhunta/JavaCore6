@@ -25,10 +25,12 @@ public class TripAdvisorAPI implements API {
 
     public Room[] findRoom(int price, int persons, String city, String hotel) {
         Room[] newarray = new Room[0];
+        Room templateroom = new Room(00, price, persons, new Date(), hotel, city);
+
 
         for (int i = 0; i < rooms.length; i++) {
 
-            if (rooms[i].getPrice() == price && rooms[i].getPersons() == persons && rooms[i].getCityName() == city && rooms[i].getHotelName() == hotel) {
+            if (rooms[i].equals(templateroom) && rooms[i].getHotelName().equals(hotel)) {
                 newarray = Room.newRoomsArray(newarray, rooms[i]);
             }
         }
