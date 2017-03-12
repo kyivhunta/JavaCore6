@@ -6,16 +6,16 @@ import java.util.Arrays;
 public final class ArraysUtils {
 
 
-    public static void secondMax(int[] array) {
+    public static final void secondMax(int[] array) {
         Arrays.sort(array);
         System.out.println("Второй найбольший елемент масива типа int: " + array[array.length - 2]);
     }
 
-    public static void firstAndLastModule(int[] array) {
+    public static final void firstAndLastModule(int[] array) {
         System.out.println("Первый елемент: " + Math.abs(array[0]) + " и последний: " + Math.abs(array[array.length - 1]) + " елемент масива типа int по модулю");
     }
 
-    public static void multiplationArray(int[] array) {
+    public static final void multiplationArray(int[] array) {
         int mult = 1;
         for (int i = 0; i < array.length; i++) {
             mult *= array[i];
@@ -23,7 +23,7 @@ public final class ArraysUtils {
         System.out.println("Результат перемноженого масива типа int: " + mult);
     }
 
-    public static void maxPositiveVal(int[] array) {
+    public static final void maxPositiveVal(int[] array) {
         int maxpos = array[0];
         for (int i = 1; i < array.length; i++) {
 
@@ -35,7 +35,7 @@ public final class ArraysUtils {
         System.out.println(maxpos >= 0 ? "Максимальный позитивный елемент массива типа int: " + maxpos : "Все елементы масива отрицательные числа");
     }
 
-    public static void getSumArray(int[] array) {
+    public static final void getSumArray(int[] array) {
         int sum = 0;
         for (int i : array) {
             sum += i;
@@ -43,7 +43,7 @@ public final class ArraysUtils {
         System.out.println("Сумма елементов масива типа int: " + sum);
     }
 
-    public static void minValArray(int[] array) {
+    public static final void minValArray(int[] array) {
 
         int minindex = array[0];
 
@@ -57,7 +57,7 @@ public final class ArraysUtils {
         System.out.println("Минимальное значение массива типа int: " + minindex);
     }
 
-    public static void maxValArray(int[] array) {
+    public static final void maxValArray(int[] array) {
 
         int maxIndex = array[0];
 
@@ -72,7 +72,7 @@ public final class ArraysUtils {
 
     }
 
-    public static int[] reverse(int[] array) {
+    public static final int[] reverse(int[] array) {
 
         int[] finalarray = new int[0];
 
@@ -83,7 +83,7 @@ public final class ArraysUtils {
         return finalarray;
     }
 
-    public static int[] findEvenElements(int[] array) {
+    public static final int[] findEvenElements(int[] array) {
 
         int[] finalArray = new int[0];
 
@@ -94,7 +94,7 @@ public final class ArraysUtils {
         return finalArray;
     }
 
-    public static int[] newElementToArray(int[] array, int newelement) {
+    public static final  int[] newElementToArray(int[] array, int newelement) {
 
         int[] copyarray = new int[array.length + 1];
         System.arraycopy(array, 0, copyarray, 0, array.length);

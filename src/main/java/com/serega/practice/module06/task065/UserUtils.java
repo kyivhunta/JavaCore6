@@ -5,7 +5,7 @@ import com.serega.practice.module06.task064.User;
 
 public final class UserUtils {
 
-    public static User[] uniqueUsers(User[] users) {
+    public static final User[] uniqueUsers(User[] users) {
 
         User[] theSameUsers = users.clone();
         User[] finalArray = new User[0];
@@ -28,7 +28,7 @@ public final class UserUtils {
         return finalArray;
     }
 
-    public static User[] usersWithContitionalBalance(User[] users, int balance) {
+    public static final User[] usersWithContitionalBalance(User[] users, int balance) {
 
         User[] finalArray = new User[0];
 
@@ -64,7 +64,7 @@ public final class UserUtils {
         return usersIdArray;
     }
 
-    public static User[] deleteEmptyUsers(User[] users) {
+    public static final User[] deleteEmptyUsers(User[] users) {
 
         User[] finalArray = new User[0];
 
@@ -76,7 +76,7 @@ public final class UserUtils {
         return finalArray;
     }
 
-    static User[] newElementToArray(User[] users, User user) {
+     public static final User[] newElementToArray(User[] users, User user) {
 
         User[] copyUsers = new User[users.length + 1];
         System.arraycopy(users, 0, copyUsers, 0, users.length);
@@ -85,7 +85,7 @@ public final class UserUtils {
 
     }
 
-    static long[] newElementToArray(long[] ids, long id) {
+    public static final long[] newElementToArray(long[] ids, long id) {
 
         long[] copyIds = new long[ids.length + 1];
         System.arraycopy(ids, 0, copyIds, 0, ids.length);
