@@ -7,7 +7,11 @@ import java.util.*;
 public class Main2 {
     public static void main(String[] args) {
 
-        TreeSet<Order> orderSet = new TreeSet<Order>(new ComparatorByPriceDown());
+        TreeSet<Order> orderSet = new TreeSet<Order>(new Comparator<Order>() {
+            public int compare(Order o1, Order o2) {
+                return Integer.valueOf(o2.getPrice()).compareTo(o1.getPrice());
+            }
+        });
 
         orderSet.add(new Order(1, 9000, CurrencyEnumM7.UAH, "knife", "AMAZON", new User(111, "Grisha", "Kolinval", "B", 5000)));
         orderSet.add(new Order(1, 8000, CurrencyEnumM7.UAH, "knife", "AMAZON", new User(222, "Vasyl", "Koko", "C", 5000)));
