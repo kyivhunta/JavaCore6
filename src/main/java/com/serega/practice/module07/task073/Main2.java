@@ -28,7 +28,7 @@ public class Main2 {
 
         for (Order order : orderSet) {
 
-            if (order.getUser().getLastName() == "Petrov") System.out.println(order);
+            if (order.getUser().getLastName().equals("Petrov")) System.out.println(order);
 
         }
 
