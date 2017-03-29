@@ -9,22 +9,20 @@ public class IManageSystemRealisation implements IManageSystem<Food> {
 
     private Map<Food, Double> database = new HashMap<Food, Double>();
 
+    private static final double DEFAULT_PRICE = 0.0;
+
     public Food save(Food obj, double price) {
         database.put(obj, price);
         return obj;
     }
 
     public Food save(Food obj) {
-        Iterator<Food> iterator = database.keySet().iterator();
-        while (iterator.hasNext()) {
-            Food next = iterator.next();
-            if (next.getName().equals(obj.getName())) {
-                database.put(obj, database.get(next));
-                database.remove(next);
-                return obj;
-            }
+
+        if (database.containsKey(obj)) {
+            System.out.println("Такой товар уже существует в базе!!!");
+            return obj;
         }
-        database.put(obj, null);
+        database.put(obj, DEFAULT_PRICE);
         return obj;
     }
 
@@ -36,8 +34,12 @@ public class IManageSystemRealisation implements IManageSystem<Food> {
         Iterator<Food> iterator = database.keySet().iterator();
         while (iterator.hasNext()) {
             Food next = iterator.next();
-            if (next.getId() == id) iterator.remove();
+            if (next.getId() == id) {
+                iterator.remove();
+                return;
+            }
         }
+        System.out.println("Товар с таким ID не найден!!!");
     }
 
     public void printProductsSortedByName() {
