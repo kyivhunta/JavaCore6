@@ -3,11 +3,10 @@ package com.serega.practice.module08.task01;
 
 public final class IdGenerator {
 
-    private static int productid = 1;
 
-    public static int idGenerator() {
+    public static int idGenerator(String nameProduct, Country country, int expiration) {
 
-        return productid++;
+        return Math.abs(country.getCountryNumber()+nameProduct.hashCode()+expiration);
 
     }
 
