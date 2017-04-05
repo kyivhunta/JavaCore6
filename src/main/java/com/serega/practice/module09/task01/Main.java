@@ -49,7 +49,7 @@ public class Main {
 
     public static void SortedByPriceUp$City(List<Order> orders) {
         List<Order> sortedByPriceUp$City = new ArrayList<>(orders);
-        sortedByPriceUp$City.sort(Comparator.comparing(Order::getPrice, Comparator.reverseOrder())
+        sortedByPriceUp$City.sort(Comparator.comparing(Order::getPrice)
                 .thenComparing(order -> order.getUser().getCity()));
 
         System.out.println(sortedByPriceUp$City);
