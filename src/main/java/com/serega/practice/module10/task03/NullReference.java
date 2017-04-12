@@ -8,10 +8,8 @@ public class NullReference {
 
         try {
 
-
             String name = null;
             name.length();
-            if (name.equals(null)) throw new NullPointerException();
 
         } catch (NullPointerException n) {
 

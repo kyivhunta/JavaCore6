@@ -2,11 +2,10 @@ package com.serega.practice.module10.task02;
 
 public class UseMyException {
 
-    private static final int CONST = 11;
 
     public static void testException() throws MyException {
 
-        if (CONST%2!=0)throw new MyException("ATTENTION");
+        throw new MyException("ATTENTION");
 
     }
 
@@ -16,8 +15,7 @@ public class UseMyException {
             testException();
         } catch (MyException e) {
             System.out.println(e.reference);
-        }
-        finally {
+        } finally {
             System.out.println("EVERYTHING IS OKAY");
         }
 
