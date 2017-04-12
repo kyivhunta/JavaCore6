@@ -14,7 +14,7 @@ public class UseMyException {
         try {
             testException();
         } catch (MyException e) {
-            System.out.println(e.reference);
+            System.out.println(e.getReference());
         } finally {
             System.out.println("EVERYTHING IS OKAY");
         }
