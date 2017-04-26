@@ -19,7 +19,10 @@ public class CheckWord {
 
             while ((line = br.readLine()) != null) {
 
-                if (line.contains(word)) count++;
+                String[] split = line.split(" ");
+                for (String s : split) {
+                    if (s.contains(word))count++;
+                }
 
             }
 
@@ -40,7 +43,11 @@ public class CheckWord {
             BufferedReader br = new BufferedReader(new InputStreamReader(new FileInputStream(file)));
 
             while ((line = br.readLine()) != null) {
-                if (line.contains(word))count++;
+                String[] split = line.split(" ");
+                for (String s : split) {
+                if (s.contains(word))count++;
+                }
+
             }
 
         } catch (FileNotFoundException e) {
